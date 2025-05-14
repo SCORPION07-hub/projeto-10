@@ -59,31 +59,114 @@
       animation: fadeIn 2s ease-in-out;
     }
     h2 { font-family: 'Playfair Display', serif; font-size: 2.5em; text-align: center; margin-bottom: 1em; }
-    .cta { background: #222; color: #fff; padding: 3em; text-align: center; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .cta button { background: #00c851; border: none; padding: 1.2em 2.5em; color: #fff; font-size: 1.3em; cursor: pointer; border-radius: 10px; margin-top: 1em; transition: background 0.3s ease; }
+    .cta {
+      background: #222;
+      color: #fff;
+      padding: 3em;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .cta button {
+      background: #00c851;
+      border: none;
+      padding: 1.2em 2.5em;
+      color: #fff;
+      font-size: 1.3em;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 1em;
+      transition: background 0.3s ease;
+    }
     .cta button:hover { background: #007c33; }
-    .depoimentos, .faq { background: #e0e0e0; padding: 2em; border-radius: 15px; margin: 2em 0; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+
+    #timer {
+      font-size: 2em;
+      font-weight: bold;
+      color: #ff3b3b;
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      background-color: #ffe5e5;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .depoimentos, .faq {
+      background: #e0e0e0;
+      padding: 2em;
+      border-radius: 15px;
+      margin: 2em 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
     .faq h3 { margin-top: 1em; font-size: 1.2em; }
-    .stats { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5em; margin: 2em 0; }
-    .stat-card { background: #fff; padding: 1.5em; border-radius: 10px; flex: 1 1 250px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .stat-card h3 { font-size: 2em; margin-bottom: 0.5em; color: #00c851; }
-    .stat-card p { margin: 0; font-size: 1em; color: #555; }
-    footer { background: #111; color: #fff; text-align: center; padding: 2em; margin-top: 3em; font-family: 'Playfair Display', serif; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+    .stat-card {
+      background: #fff;
+      padding: 1.5em;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .stat-card h3 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      color: #00c851;
+    }
+    .stat-card p {
+      margin: 0;
+      font-size: 1em;
+      color: #555;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2em;
+      margin-top: 3em;
+      font-family: 'Playfair Display', serif;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
   <script>
-    const countdownDate = new Date().getTime() + 72*60*60*1000;
-    function updateCountdown(){const now=new Date().getTime(),dist=countdownDate-now;if(dist<0){document.getElementById('timer').innerHTML='Oferta encerrada';return;}let h=Math.floor((dist%(1000*60*60*24))/(1000*60*60)),m=Math.floor((dist%(1000*60*60))/(1000*60)),s=Math.floor((dist%(1000*60))/1000);document.getElementById('timer').innerHTML=`${h}h ${m}m ${s}s`;}setInterval(updateCountdown,1000);
+    const countdownDate = new Date().getTime() + 72 * 60 * 60 * 1000;
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const dist = countdownDate - now;
+      if (dist < 0) {
+        document.getElementById('timer').innerHTML = 'Oferta encerrada';
+        return;
+      }
+      let h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+      let s = Math.floor((dist % (1000 * 60)) / 1000);
+      document.getElementById('timer').innerHTML = `${h}h ${m}m ${s}s`;
+    }
+    setInterval(updateCountdown, 1000);
   </script>
 </head>
 <body>
   <div class="navbar">
-    <a href="#home">Início</a><a href="#ebooks">eBooks</a><a href="#cta">Comprar</a><a href="#depoimentos">Depoimentos</a>
+    <a href="#home">Início</a>
+    <a href="#ebooks">eBooks</a>
+    <a href="#cta">Comprar</a>
+    <a href="#depoimentos">Depoimentos</a>
   </div>
+
   <header id="home">
     <h1>Kit com 55 eBooks - Transforme sua Mente</h1>
     <p>“O verdadeiro livro não é aquele que te dá respostas, mas aquele que te faz questionar.” - Platão</p>
   </header>
+
   <section id="ebooks">
     <h2>Você vai receber:</h2>
     <ul>
@@ -97,17 +180,19 @@
       <li>+ 48 outros títulos essenciais</li>
     </ul>
   </section>
+
   <section class="cta" id="cta">
     <h2>Oferta Limitada</h2>
     <p>Adquira agora o kit completo com 55 eBooks por <strong>R$39,90</strong> (acesso vitalício).</p>
     <div class="countdown" id="timer">Carregando contador...</div>
     <p>Pagamento via PIX. Envie o comprovante e receba os livros no e-mail ou WhatsApp.</p>
-    <button onclick="window.open('https://wa.me/5568992493742?text=Ol%C3%A1%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20kit', '_blank')">Comprar via WhatsApp</button>
+    <button onclick="window.botpressWebChat.sendEvent({ type: 'proactive-trigger', channel: 'web', payload: { text: 'Quero comprar o kit de 55 eBooks' } });">Converse com nosso atendente</button>
   </section>
+
   <section class="quote-section">
     “O homem não é nada mais do que o que ele faz de si mesmo.” – Jean-Paul Sartre
   </section>
-  <!-- Substituímos a seção de imagens por estatísticas persuasivas -->
+
   <section class="stats">
     <div class="stat-card">
       <h3>10.000+</h3>
@@ -126,6 +211,7 @@
       <p>Link por WhatsApp após compra</p>
     </div>
   </section>
+
   <section id="depoimentos">
     <h2>Depoimentos Reais</h2>
     <div class="depoimentos">
@@ -141,6 +227,7 @@
       <strong>- Amanda S.</strong>
     </div>
   </section>
+
   <section class="faq">
     <h2>Perguntas Frequentes</h2>
     <h3>📚 Como recebo os eBooks?</h3>
@@ -152,8 +239,18 @@
     <h3>💸 O pagamento é seguro?</h3>
     <p>Sim, você paga via PIX diretamente e recebe o conteúdo garantido.</p>
   </section>
+
   <footer>
     <p>&copy; 2025 Kit com 55 eBooks. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Botpress Chat Embed -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.4/webchat.js"></script>
+  <script>
+    window.botpressWebChat.init({
+      configUrl: "https://files.bpcontent.cloud/2025/05/14/20/20250514205403-U9PY7KMG.json",
+      botId: "kit55ebooks"
+    });
+  </script>
 </body>
 </html>
